@@ -1,10 +1,13 @@
 var fs = require('fs')
 
 var Hapi = require('hapi')
+var ngrok = require('ngrok')
+
+const PORT = process.env.PORT || 8080
 
 var server = new Hapi.Server()
 server.connection({
-  port: process.env.PORT || 3000
+  port: PORT
 })
 
 server.route({
@@ -25,10 +28,16 @@ server.route({
   }
 })
 
-server.start(function (err) {
+ngrok.connect(PORT, function (err, url) {
+  if (err) {
+    console.error(err)
+    return
+  }
+  server.start(function (err) {
   if (err) {
     console.error(err)
     return
   }
   console.log('Server running at:', server.info.uri)
 })
+});
