@@ -1,0 +1,30 @@
+{
+  "name": "github-webhook-test",
+  "description": "Testing GitHub webhooks",
+  "version": "1.0.0",
+  "author": "Peter deHaan <peter@deseloper.com> (http://nodeexamples.com/)",
+  "bugs": {
+    "url": "https://github.com/pdehaan/github-webhook-test/issues"
+  },
+  "devDependencies": {
+    "eslint": "0.24.0"
+  },
+  "homepage": "https://github.com/pdehaan/github-webhook-test",
+  "keywords": [
+    "github",
+    "webhook"
+  ],
+  "license": "WTFPL",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdehaan/github-webhook-test.git"
+  },
+  "scripts": {
+    "start": "node index",
+    "test": "eslint ."
+  },
+  "dependencies": {
+    "hapi": "8.6.1"
+  }
+}
